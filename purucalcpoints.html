@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation-flex.min.css" rel='stylesheet' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js"></script>
+    
+    <title></title>
+</head>
+<body>
+
+  <style>
+    .pcf-pub-point-calc-contnr{
+        width: 1280px;
+        height: 1066px;
+        opacity: 0.9;
+        background-color: #ccc;
+        }
+    .pcf-pub-head-text-top{
+        font-family: Poppins, sans-serif;
+        font-size: 60px;
+        font-weight: 900;
+        line-height: 1.27;
+        text-align: left;
+        color: #2b2c32;
+        margin-top: 66px;
+        margin-left: 49px;
+        margin-bottom: 58px;
+        }
+    .pcf-pub-head-img-card{
+        width:187px; 
+        height:117px;
+        }
+    .pcf-pub-head-icon-center{
+        margin-top: 69px;
+        }
+    .pcf-pub-icons-top {
+        margin-right: -15px;
+        margin-left: 100px;        
+        }
+    .pcf-pub-bottom-right{
+        margin-top: 61px;
+        padding-left: 96px;
+        }
+    .pcf-pub-calc-right-left{
+        font-size: 60px;
+        font-weight: 900;
+        color: #00a0ad;
+        line-height: 1.27;
+        }
+    .pcf-calc-right-text{
+        font-size: 28px;
+        font-weight: 900;
+        line-height: 1.5;
+        }
+     .pcf-calc-num-icon {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 2.18;
+        color: #00a0ad;
+        margin-top: -8px;
+        margin-left: -9px;
+        text-align:center;
+         cursor: pointer;
+        }
+     .pcf-pub-name-icon-center{
+        margin-left: -12px;
+        font-size: 15px;
+        line-height: 2.13;
+        text-align: center;
+        color: #2b2c32;
+        }
+    .pcf-pub-head-top-allign{
+        margin-left: 56px;
+        margin-bottom: 84px;
+        }
+    .slider-handle{
+        border-radius:50%;
+        }
+    .slider{
+        background-color: #1779ba;
+        height: 0.2em;
+         }
+    .slider-fill{
+        background-color: #1779ba;
+        height: 0.2em;
+         }
+    .tooltip-test {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    }
+
+/* Tooltip text */
+    .tooltip-test .tooltiptext-test {
+        visibility: hidden;
+        width: 150px;
+        background-color: white;
+        color: #000;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px; 
+/* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 1;
+    }
+    .tooltiptext-test a:hover, focus{
+        text-decoration:none;
+        color: #000;
+    }
+    .tooltip-test .tooltiptext-test::after {
+        content: " ";
+        position: absolute;
+        top: 100%; /* At the bottom of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+    }
+
+/* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip-test .tooltiptext-test {
+         visibility: visible;
+         margin: -15px 0px 0px -15px;
+    }
+    .custom-nav .nav > li > a { 
+         border: none; 
+         color: #666; 
+         }    
+    .custom-nav .nav> li > a::after {
+         content: "";
+         border-top: 1px solid #000;
+         position: absolute;
+         width: 100%; 
+         left: 0px;
+         transition: all 250ms ease 0s;
+         transform: scale(1);
+         margin-top: 40px;      
+         }
+    .custom-nav .nav > li.active > a::after, .nav > li:hover > a::after {
+         transform: scale(1);
+         border-top: 4px solid red;
+         }
+
+    .custom-nav .nav>li>a:focus, .nav>li>a:hover  {
+         background-color :#000  !important;
+         }
+    .custom-nav .nav>li {
+         float: left;
+         margin-bottom: -1px;
+         border-right: 60px solid #ccc;
+         width:350px;
+         }
+    .pcf-pub-content-icon:hover, a:focus{
+        text-decoration:none;
+         }
+     body {
+        margin: 2rem;
+         }
+    .slider-handle {
+        border-radius: 50%;
+         }
+    .slider {
+        background-color: #1779ba;
+         }
+    .slider-fill {
+        background-color: #1779ba;
+         }
+    .pcf-pub-card-ttl{
+        font-family: Trebuchet MS, Verdana, sans-serif; 
+        color: #2b2c32;
+    }
+    .pcf-calc-right-text-left{
+        margin-left: 11em;
+        margin-top: -2em;
+        font-size: 28px;
+        font-weight: 900;
+        line-height: 1.5;
+    }
+    </style>
+    <div class="container pcf-pub-point-calc-contnr">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="pcf-pub-head-text-top">Points Calculator</h1>
+            </div>
+        </div>
+        <div class="row pcf-pub-head-top-allign">           
+            <nav class="navbar custom-nav">
+                <div class="container-fluid">
+                        <ul class="nav pcf-pub-card-ttl">
+                            <li class="active"><img src="../images/world-mastercard.png" class="pcf-pub-head-img-card" /><a data-toggle="tab" href="" onclick="return false;">PC&#174; Mastercard&#174;</a></li>
+                            <li><img src="../images/world-mastercard.png" class="pcf-pub-head-img-card" /> <a data-toggle="tab" href="" onclick="return false;">PCF&#174; World Mastercard&#174;</a></li>
+                            <li><img src="../images/world-mastercard.png" class="pcf-pub-head-img-card" /> <a data-toggle="tab" href="" onclick="return false;">PCF&#174; World Elite Mastercard&#174;</a></li>
+                        </ul>
+                   </div>
+            </nav>
+        </div>       
+        <div class="row pcf-pub-icons-top">            
+            <div class="col-md-6 pcf-pub-head-icon-center">
+                <div class="col-md-4">                    
+                        <div class="glyphicon glyphicon-text-background">                           
+                        </div>
+                    <span style="display:none;" id="slider1-tooltip" class="tooltip-test">
+                        <span class="tooltiptext-test"><a>Click to manually enter value above $2000</a>
+                        </span>
+                    </span>
+                    <h4 class="pcf-pub-name-icon-center"><a href="#" class="pcf-pub-content-icon">Groceries</a></h4>
+                    <h2 id="slider1-value" class="pcf-calc-num-icon"></h2>
+					 <input name="" type="number" id="slider1-inputValue" value="0">
+                        <p><span id="sliderOutput1" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Fancy word for a beetle."></span></p>
+                        <div id="slider1" class="slider" data-slider>
+                            <span id="slider1-handle-panel" class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
+                            <span class="slider-fill" data-slider-fill></span>                      
+                     </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="glyphicon glyphicon-text-background">                           
+                        </div>
+                    <span style="display:none;" id="slider2-tooltip" class="tooltip-test">
+                        <span class="tooltiptext-test"><a>Click to manually enter value above $2000</a>
+                        </span>
+                    </span>
+                    <h4 class="pcf-pub-name-icon-center"><a href="#" class="pcf-pub-content-icon">Groceries</a></h4>
+                    <h2 id="slider2-value" class="pcf-calc-num-icon"></h2>
+					 <input name="" type="number" id="slider2-inputValue">
+                        <p><span id="sliderOutput2" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Fancy word for a beetle."></span></p>
+                        <div id="slider2" class="slider" data-slider>
+                            <span id="slider2-handle-panel" class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput2"></span>
+                            <span class="slider-fill" data-slider-fill></span>                      
+                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glyphicon glyphicon-text-background">                           
+                        </div>
+                    <span style="display:none;" id="slider3-tooltip" class="tooltip-test">
+                        <span class="tooltiptext-test"><a>Click to manually enter value above $2000</a>
+                        </span>
+                    </span>
+                    <h4 class="pcf-pub-name-icon-center"><a href="#" class="pcf-pub-content-icon">Groceries</a></h4>
+                    <h2 id="slider3-value" class="pcf-calc-num-icon"></h2>
+					 <input name="" type="number" id="slider3-inputValue">
+                        <p><span id="sliderOutput3" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Fancy word for a beetle."></span></p>
+                        <div id="slider3" class="slider" data-slider>
+                            <span id="slider3-handle-panel" class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput3"></span>
+                            <span class="slider-fill" data-slider-fill></span>                      
+                     </div>
+                </div>
+                              
+            </div>
+            <div class="col-md-5 pcf-pub-bottom-right">
+                <h2 class="pcf-calc-right-text">My monthly spend is </h2>
+                <h2 class="pcf-pub-calc-right-left" id="pc_monthly"></h2>
+            </div>
+        </div>
+        <div class="row pcf-pub-icons-top">
+             <div class="col-md-6 pcf-pub-head-icon-center">
+                <div class="col-md-4">                  
+                    <div class="glyphicon glyphicon-text-background">                           
+                        </div>
+                    <span style="display:none;" id="slider4-tooltip" class="tooltip-test">
+                        <span class="tooltiptext-test"><a>Click to manually enter value above $2000</a>
+                        </span>
+                    </span>
+                    <h4 class="pcf-pub-name-icon-center"><a href="#" class="pcf-pub-content-icon">Groceries</a></h4>
+                    <h2 id="slider4-value" class="pcf-calc-num-icon"></h2>
+					 <input name="" type="number" id="slider4-inputValue">
+                        <p><span id="sliderOutput4" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Fancy word for a beetle."></span></p>
+                        <div id="slider4" class="slider" data-slider>
+                            <span id="slider4-handle-panel" class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput4"></span>
+                            <span class="slider-fill" data-slider-fill></span>                      
+                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glyphicon glyphicon-text-background">                           
+                        </div>
+                    <span style="display:none;" id="slider5-tooltip" class="tooltip-test">
+                        <span class="tooltiptext-test"><a>Click to manually enter value above $2000</a>
+                        </span>
+                    </span>
+                    <h4 class="pcf-pub-name-icon-center"><a href="#" class="pcf-pub-content-icon">Groceries</a></h4>
+                    <h2 id="slider5-value" class="pcf-calc-num-icon"></h2>
+					 <input name="" type="number" id="slider5-inputValue">
+                        <p><span id="sliderOutput5" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Fancy word for a beetle."></span></p>
+                        <div id="slider5" class="slider" data-slider>
+                            <span id="slider5-handle-panel" class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput5"></span>
+                            <span class="slider-fill" data-slider-fill></span>                      
+                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glyphicon glyphicon-text-background">                           
+                        </div>
+                    <span style="display:none;" id="slider6-tooltip" class="tooltip-test">
+                        <span class="tooltiptext-test"><a>Click to manually enter value above $2000</a>
+                        </span>
+                    </span>
+                    <h4 class="pcf-pub-name-icon-center"><a href="#" class="pcf-pub-content-icon">Groceries</a></h4>
+                    <h2 id="slider6-value" class="pcf-calc-num-icon"></h2>
+					 <input name="" type="number" id="slider6-inputValue">
+                        <p><span id="sliderOutput6" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Fancy word for a beetle."></span></p>
+                        <div id="slider6" class="slider" data-slider>
+                            <span id="slider6-handle-panel" class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput6"></span>
+                            <span class="slider-fill" data-slider-fill></span>                      
+                     </div>
+                </div>
+            </div>
+            <div class="col-md-5 pcf-pub-bottom-right">
+                <h2 class="pcf-calc-right-text">That's</h2>
+                 <div>
+                    <h2 class="pcf-pub-calc-right-left" id="pc_anually"></h2>
+                     <h2 class="pcf-calc-right-text-left">anually</h2>
+                    <h6 id="pc_points"></h6>
+                </div>
+           </div>
+       </div>
+   </div>    
+     
+ <script>
+$(document).foundation();
+var displayPopup = true;
+var displayPopup2 = true;
+var displayPopup3 = true;
+var displayPopup4 = true;
+var displayPopup5 = true;
+var displayPopup6 = true;
+
+var pc_points = 0;
+var options = {
+  "initialStart": 0,
+  "end": 2000
+};
+
+var elem = new Foundation.Slider($("#slider1"), options);
+var elem = new Foundation.Slider($("#slider2"), options);
+var elem = new Foundation.Slider($("#slider3"), options);
+var elem = new Foundation.Slider($("#slider4"), options);
+var elem = new Foundation.Slider($("#slider5"), options);
+var elem = new Foundation.Slider($("#slider6"), options);
+
+/*slider 1*/
+$('#slider1-inputValue').on('input', function() {
+
+ var options = {
+  "initialStart": $('#slider1-inputValue').val(),
+  "end": 2000
+};
+var elem = new Foundation.Slider($("#slider1"), options);
+ $("#slider1-value").text("$" + formatNumber($('#slider1-inputValue').val()));
+ if($("#slider1-inputValue").val()>2000){
+ var options = {
+  "initialStart": $('#slider1-inputValue').val(),
+  "end": $('#slider1-inputValue').val()
+};
+
+var elem = new Foundation.Slider($("#slider1"), options);
+displayPopup = false;
+ }
+ $("#slider1-tooltip").hide();
+});
+
+/*slider 2*/
+$('#slider2-inputValue').on('input', function() {
+
+ var options = {
+  "initialStart": $('#slider2-inputValue').val(),
+  "end": 2000
+};
+var elem = new Foundation.Slider($("#slider2"), options);
+ $("#slider2-value").text("$" + formatNumber($('#slider2-inputValue').val()));
+ if($("#slider2-inputValue").val()>2000){
+ var options = {
+  "initialStart": $('#slider2-inputValue').val(),
+  "end": $('#slider2-inputValue').val()
+};
+
+var elem = new Foundation.Slider($("#slider2"), options);
+displayPopup2 = false;
+ }
+ $("#slider2-tooltip").hide();
+});
+
+/*slider 3*/
+$('#slider3-inputValue').on('input', function() {
+
+ var options = {
+  "initialStart": $('#slider3-inputValue').val(),
+  "end": 2000
+};
+var elem = new Foundation.Slider($("#slider3"), options);
+ $("#slider3-value").text("$" + formatNumber($('#slider3-inputValue').val()));
+ if($("#slider3-inputValue").val()>2000){
+ var options = {
+  "initialStart": $('#slider3-inputValue').val(),
+  "end": $('#slider3-inputValue').val()
+};
+
+var elem = new Foundation.Slider($("#slider3"), options);
+displayPopup = false;
+ }
+ $("#slider3-tooltip").hide();
+});
+
+/*slider 4*/
+$('#slider4-inputValue').on('input', function() {
+
+ var options = {
+  "initialStart": $('#slider4-inputValue').val(),
+  "end": 2000
+};
+var elem = new Foundation.Slider($("#slider4"), options);
+ $("#slider4-value").text("$" + formatNumber($('#slider4-inputValue').val()));
+ if($("#slider4-inputValue").val()>2000){
+ var options = {
+  "initialStart": $('#slider4-inputValue').val(),
+  "end": $('#slider4-inputValue').val()
+};
+
+var elem = new Foundation.Slider($("#slider4"), options);
+displayPopup = false;
+ }
+ $("#slider4-tooltip").hide();
+});
+
+/*slider 5*/
+$('#slider5-inputValue').on('input', function() {
+
+ var options = {
+  "initialStart": $('#slider5-inputValue').val(),
+  "end": 2000
+};
+var elem = new Foundation.Slider($("#slider5"), options);
+ $("#slider5-value").text("$" + formatNumber($('#slider5-inputValue').val()));
+ if($("#slider5-inputValue").val()>2000){
+ var options = {
+  "initialStart": $('#slider5-inputValue').val(),
+  "end": $('#slider5-inputValue').val()
+};
+
+var elem = new Foundation.Slider($("#slider5"), options);
+displayPopup = false;
+ }
+ $("#slider5-tooltip").hide();
+});
+
+/*slider 6*/
+$('#slider6-inputValue').on('input', function() {
+
+ var options = {
+  "initialStart": $('#slider6-inputValue').val(),
+  "end": 2000
+};
+var elem = new Foundation.Slider($("#slider6"), options);
+ $("#slider6-value").text("$" + formatNumber($('#slider6-inputValue').val()));
+ if($("#slider6-inputValue").val()>2000){
+ var options = {
+  "initialStart": $('#slider6-inputValue').val(),
+  "end": $('#slider6-inputValue').val()
+};
+
+var elem = new Foundation.Slider($("#slider6"), options);
+displayPopup = false;
+ }
+ $("#slider6-tooltip").hide();
+});
+
+$("#slider1-inputValue").hide();
+$("#slider2-inputValue").hide();
+$("#slider3-inputValue").hide();
+$("#slider4-inputValue").hide();
+$("#slider5-inputValue").hide();
+$("#slider6-inputValue").hide();
+$("body").click(function(){
+		$("#slider1-inputValue").hide();
+		$("#slider1-value").show();
+		$("#slider2-inputValue").hide();
+		$("#slider2-value").show();
+		$("#slider3-inputValue").hide();
+		$("#slider3-value").show();
+		$("#slider4-inputValue").hide();
+		$("#slider4-value").show();
+		$("#slider5-inputValue").hide();
+		$("#slider5-value").show();
+		$("#slider6-inputValue").hide();
+		$("#slider6-value").show();
+	});
+$("#slider1-value").click(function(){
+      	$("#slider1-value").hide();
+      	$("#slider1-inputValue").show();
+      });
+	  $("#slider2-value").click(function(){
+      	$("#slider2-value").hide();
+      	$("#slider2-inputValue").show();
+      });
+	  $("#slider3-value").click(function(){
+      	$("#slider3-value").hide();
+      	$("#slider3-inputValue").show();
+      });
+	  $("#slider4-value").click(function(){
+      	$("#slider4-value").hide();
+      	$("#slider4-inputValue").show();
+      });
+	  $("#slider5-value").click(function(){
+      	$("#slider5-value").hide();
+      	$("#slider5-inputValue").show();
+      });
+	  $("#slider6-value").click(function(){
+      	$("#slider6-value").hide();
+      	$("#slider6-inputValue").show();
+      });
+function showAdvice(obj, msg) {
+    $("#singleAdvice").stop(true, false).remove();  // remove any prev msg
+    $('<span id="singleAdvice" class="advice">' + msg + '</span>').insertAfter(obj);
+    $("#singleAdvice").delay(4000).fadeOut(1500);  // show for 4 seconds, then fade out
+}
+function padePopup(){
+      	timeOut = setTimeout(function(){
+   $("#slider1-tooltip").hide();
+      $("#slider2-tooltip").hide();
+	  $("#slider3-tooltip").hide();
+	  $("#slider4-tooltip").hide();
+	  $("#slider5-tooltip").hide();
+	  $("#slider6-tooltip").hide();
+}, 3000);}
+function formatNumber(num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+    }
+$('#slider1-inputValue').click(function(event){
+      event.stopPropagation();
+});
+$('#slider1-value').click(function(event){
+      event.stopPropagation();
+});
+$('#slider2-inputValue').click(function(event){
+      event.stopPropagation();
+});
+$('#slider2-value').click(function(event){
+      event.stopPropagation();
+});
+$('#slider3-inputValue').click(function(event){
+      event.stopPropagation();
+});
+$('#slider3-value').click(function(event){
+      event.stopPropagation();
+});
+$('#slider4-inputValue').click(function(event){
+      event.stopPropagation();
+});
+$('#slider4-value').click(function(event){
+      event.stopPropagation();
+});
+$('#slider5-inputValue').click(function(event){
+      event.stopPropagation();
+});
+$('#slider5-value').click(function(event){
+      event.stopPropagation();
+});
+$('#slider6-inputValue').click(function(event){
+      event.stopPropagation();
+});
+$('#slider6-value').click(function(event){
+      event.stopPropagation();
+});
+<!-- $("#slider1-handle-panel").on('click.zf.slider', function(){ -->
+<!-- console.log("cloes"); -->
+ <!-- var options = { -->
+  <!-- "initialStart": $('#slider1-inputValue').val(), -->
+  <!-- "end": 2000 -->
+<!-- }; -->
+<!-- var elem = new Foundation.Slider($("#slider1"), options); -->
+<!-- }); -->
+$('[data-slider]').on('moved.zf.slider', function(){
+	var timeOut;
+	console.log("second"+$("#slider1-inputValue").val());
+	<!-- if($("#slider1-inputValue").val() > 2000 ){ -->
+	<!-- console.log("Verdana"); -->
+	<!-- } -->
+    var sliderValue = $("#slider1-handle-panel").attr("aria-valuenow");   
+	var sliderValue2 = $("#slider2-handle-panel").attr("aria-valuenow");
+var sliderValue3 = $("#slider3-handle-panel").attr("aria-valuenow");
+var sliderValue4 = $("#slider4-handle-panel").attr("aria-valuenow");
+var sliderValue5 = $("#slider5-handle-panel").attr("aria-valuenow");
+var sliderValue6 = $("#slider6-handle-panel").attr("aria-valuenow");	
+    $("#slider1-value").text("$" + formatNumber(sliderValue));
+	$('#slider1-inputValue').val(sliderValue);
+	$("#slider2-value").text("$" + formatNumber(sliderValue2));
+	$('#slider2-inputValue').val(sliderValue2);
+	$("#slider3-value").text("$" + formatNumber(sliderValue3));
+	$('#slider3-inputValue').val(sliderValue3);
+	$("#slider4-value").text("$" + formatNumber(sliderValue4));
+	$('#slider4-inputValue').val(sliderValue4);
+	$("#slider5-value").text("$" + formatNumber(sliderValue5));
+	$('#slider5-inputValue').val(sliderValue5);
+	$("#slider6-value").text("$" + formatNumber(sliderValue6));
+	$('#slider6-inputValue').val(sliderValue6);
+	
+  if (sliderValue >= 2000) {
+  if(displayPopup){
+      $("#slider1-tooltip").show();
+	  padePopup();
+                  }
+  }
+  else {
+      $("#slider1-tooltip").hide();
+  }
+   if (sliderValue2 >= 2000) {
+  if(displayPopup2){
+      $("#slider2-tooltip").show();
+	  padePopup();
+                  }
+  }
+  else {
+      $("#slider2-tooltip").hide();
+  }
+     if (sliderValue3 >= 2000) {
+  if(displayPopup3){
+      $("#slider3-tooltip").show();
+	  padePopup();
+                  }
+  }
+  else {
+      $("#slider3-tooltip").hide();
+  }
+     if (sliderValue4 >= 2000) {
+  if(displayPopup4){
+      $("#slider4-tooltip").show();
+	  padePopup();
+                  }
+  }
+  else {
+      $("#slider4-tooltip").hide();
+  }
+     if (sliderValue5 >= 2000) {
+  if(displayPopup5){
+      $("#slider5-tooltip").show();
+	  padePopup();
+                  }
+  }
+  else {
+      $("#slider5-tooltip").hide();
+  }
+     if (sliderValue6 >= 2000) {
+  if(displayPopup6){
+      $("#slider6-tooltip").show();
+	  padePopup();
+                  }
+  }
+  else {
+      $("#slider6-tooltip").hide();
+  }
+  pc_points = (parseInt($("#slider1-inputValue").val()) + parseInt($("#slider2-inputValue").val()) + parseInt($("#slider3-inputValue").val()) 
+				+ parseInt($("#slider5-inputValue").val()) + parseInt($("#slider6-inputValue").val())) * 10;
+  var pc_points_travel = parseInt($("#slider4-inputValue").val()) * 20;
+  
+  $("#pc_monthly").text("$ "+ (pc_points/10 + pc_points_travel/20));
+  $("#pc_anually").text("$ "+ (pc_points/10 + pc_points_travel/20)*12);
+  $("#pc_points").text("("+ (pc_points + pc_points_travel)+"PC Points)");
+});
+    </script>
+</body>
+</html>
