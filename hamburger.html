@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="../ResourcePackages/Bootstrap/assets/dist/css/main.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @font-face {
+            font-family: FuturaPT;
+            src: url('./fonts/FuturaStd-Book.woff');
+        }
+        .pcfHam-navbar-menu{
+            padding:10px;
+            width: 900px
+        }
+        .pcfHam-ham-burg{
+            padding-left: 1em; 
+            font-family: FuturaPT;
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 2.19;
+            font-weight: bolder;
+            color: #fff;
+            letter-spacing: 1px;
+            padding-top: 0.5em;
+            padding-bottom: 0.8em;
+        }
+        .pcfHam-horiz{
+            width: 89%;
+        }
+        .pcfHam-body-back{
+            background-color:gray;
+        }
+        .pcfHam-drop-down{
+            background-color: #2b2c32;
+        }
+        .pcfHam-nav-head{
+            padding-top: 23px;
+        }
+        .pcfHam-item-left{
+            color: #fff; 
+            padding-left: 3em;
+        }
+        .pcfHam-item-right{
+            color:#fff;
+            float:right;
+        }
+        .pcfHam-lock-head{
+            color: #fff; 
+            padding-left: 12px;
+        }
+        .pcfHam-card-check{
+            color: #fff;  
+            font-weight: bolder; 
+            letter-spacing: 1px;
+            font-size: smaller;
+        }
+        .pcfHam-img-bottom-left{
+            padding-left: 5.7em;
+            padding-top: 3em;
+        }
+        .pcfHam-item-in-line{             
+            color:#fff; 
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 2.93;
+            padding-left: 3em;
+            text-align-last: justify;
+            padding-bottom: 3em;
+        }            
+       .pcfHam-img-bottom-left{           
+            padding-top:3em; 
+            padding-bottom: 5em;
+       }
+       .pcfHam-social-bottom{
+           padding-left:7.7em; 
+           padding-top: 1.5em;
+       }
+       .pcfHam-items-list-col{
+           color:#fff;
+           padding-right: 2.5em;
+       }
+       .pcfHam-img-right{
+           height:4%; 
+           width: 20%; 
+           padding-left: 6px;
+       }
+       .pcfHam-social-bottomleft{
+           width: 6%; 
+           padding-top: 2em;
+         }
+        .pcfHam-social-bottomright {
+            width: 5.5%;
+            padding-top: 2em;
+         }
+        .pcfHam-social-Icon{
+			padding-top: 30px;
+            width:100%;
+            padding-left:30px;
+		}
+        .pcfHam-social-Icon-width{
+             width:50%
+         }
+        .pcfHam-social-store-width{
+            width: 25%;
+             float:right;
+        }
+     @media screen and (max-width: 699px) and (min-width: 320px) {
+          .pcfHam-item-right{                  
+                  }
+          .pcfHam-item-left {
+            padding-left: 2em;
+        }
+          .pcfHam-ham-burg {
+            font-family: FuturaPT;
+            font-size: 24px;
+            font-weight: 900;
+            line-height: 2.33;
+            text-align: left;
+            color: #ffffff;
+        }
+          .pcfHam-item-in-line {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 2.93;
+            padding-left: 2em;
+            text-align-last: justify;
+        }
+         .pcfHam-horiz {
+            width: 93%;
+        }
+        .list-inline > li {
+            display: flex;            
+        }
+        .navbar-fixed-bottom, .navbar-fixed-top {
+            overflow:auto;
+            height:100%;
+        }
+        .pcfHam-social-Icon-Items{
+			padding-top: 55px;
+            float:none;
+		}
+         .pcfHam-social-Icon-width{
+             width:100%
+         }
+        .pcfHam-social-Icon {
+            padding-top: 20px;
+            width: 100%;
+            padding-left: 8px;
+        }
+         }
+    </style>
+</head>
+<body class="pcfHam-body-back">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">                     
+            <div class="navbar-collapse">
+                
+                <ul class="nav navbar-nav navbar-right" style="background-color:#000">
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           <strong>Menu</strong>
+                            <span class="glyphicon glyphicon-menu-hamburger"></span>
+                        </a>
+                        <ul class="dropdown-menu pcfHam-drop-down">
+                     <li>
+                <div class="pcfHam-navbar-menu">
+                    <div class="container" style="width:100%">
+                            <div class="row">                                
+                            <div class="col-md-6 col-xs-2">
+                                <p class="pcfHam-nav-head">
+                                    <a href="#">
+                                        <strong class="pcfHam-item-left">Sign in</strong>
+                                        <span class="glyphicon glyphicon-lock pcfHam-lock-head"></span>
+                                    </a>
+                                </p>
+                            </div>
+                                    <div class="col-md-5 col-xs-2">
+                                        <p class="pcfHam-nav-head">
+                                            <a href="#">
+                                                <strong class="pcfHam-item-right">Française</strong>
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <hr class="pcfHam-horiz" />                                                               
+                                </div>     
+                                <div class="row pcfHam-ham-burg">
+                                    <div class="col-md-6 col-xs-12">
+                                       <h3 class="pcfHam-card-check">Credit Card</h3>
+                                    </div>
+                               <div class="col-md-6 col-xs-12">
+                                   <h3 class="pcfHam-card-check">Brooklyn Blog</h3>                                                                      
+                              </div>  
+                                    <div class="col-md-6 col-xs-12">
+                                        <h3 class="pcfHam-card-check">Banking</h3>
+                                    </div>
+                                    <div class="col-md-6 col-xs-12">
+                                        <h3 class="pcfHam-card-check">Blog</h3>
+                                    </div>                                                                            
+                            </div>                                       
+                        
+                        <hr class="pcfHam-horiz"/>                                  
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">                               
+                        <ul class="list-inline pcfHam-item-in-line" style="padding-bottom: 7px;">                                        
+                                <li><a href="#" class="pcfHam-items-list-col">Ways to Bank</a></li>
+                                <li><a href="#" class="pcfHam-items-list-col">Contact Us</a></li>
+                                <li><a href="#" class="pcfHam-items-list-col">About Us</a></li>
+                                <li><a href="#" class="pcfHam-items-list-col">Careers</a></li>
+                                <li><a href="#" class="pcfHam-items-list-col">FAQ</a></li>
+                            </ul>                                                                  
+                    </div>                          
+                </div>                          
+        <div class="row pcfHam-social-Icon">                           
+                <div class="col-md-8 col-xs-12 pcfHam-social-Icon-width">
+                    <a href="#"><img src="./images/badge_app-store.png" class="col-xs-2 col-md-4 img-responsive"/></a>
+                    <a href="#"><img src="./images/badge_app-store.png" class="col-xs-2 col-md-4 img-responsive"/></a>                  
+                </div>                             
+            <div class="col-md-4 col-xs-3 pcfHam-social-Icon-Items pcfHam-social-store-width">
+                <a href="#" class="col-xs-3"><i class="fa fa-facebook" style="font-size:24px; color:gray"></i></a>
+                <a href="#" class="col-xs-3"><i class="fa fa-twitter" style="font-size:24px; color:gray"></i></a>
+                <a href="#" class="col-xs-3"><i class="fa fa-instagram" style="font-size:24px; color:gray"></i></a>
+                <a href="#" class="col-xs-3"><i class="fa fa-linkedin" style="font-size:24px; color:gray"></i></a>
+            </div>
+         </div>                      
+       </div>                  
+     </div> 
+    </ul> 
+   </ul>           
+  </div>
+ </div>
+ </div>
+</body>
+</html>
